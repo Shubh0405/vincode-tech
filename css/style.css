@@ -299,6 +299,7 @@ header
 
 .main-nav {
   transition: all 0.7s linear;
+  background-color: rgba(70, 66, 66, 0.26);
 }
 
 .main-nav .nav-link {
@@ -382,10 +383,9 @@ header
   color: #888;
 }
 
-
 .about-header {
-    width: 50%;
-    height: 500px;
+  width: 50%;
+  height: 500px;
 }
 
 @media (max-width: 480px) {
@@ -438,7 +438,7 @@ header
 banner
 -------------------------------*/
 .section-banner {
-  min-height: 700px;
+  min-height: 93vh;
   position: relative;
   background-repeat: no-repeat;
   background-position: 65% 50%;
@@ -446,20 +446,75 @@ banner
 }
 
 .section-banner .banner-content h1 {
-  font-size: 100px;
+  font-size: 60px;
   line-height: 1.2;
   letter-spacing: -0.04em;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1220px) {
   .section-banner .banner-content h1 {
     font-size: 80px;
   }
+
+  .section-banner img {
+    height: 250px;
+    width: 40%;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
+  .section-banner {
+    min-height: 100vh;
+  }
+
+  .section-banner .banner-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .section-banner .banner-content h1 {
     font-size: 60px;
+    line-height: 1.1;
+  }
+
+  .section-banner img {
+    height: 250px;
+    width: 60%;
+    transform: translateY(-50px);
+  }
+
+  .landing {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 770px) {
+  /* .section-banner{
+    min-height: 140vh;
+  } */
+  .section-banner img {
+    height: 200px;
+    width: 75%;
+    transform: translateY(-50px);
+  }
+
+  .section-banner .banner-content h1 {
+    font-size: 50px;
+    line-height: 1;
+  }
+
+  .counter-inner {
+    transform: translateY(50px);
+  }
+}
+
+@media (max-width: 770px) {
+  .section-banner img {
+    width: 90%;
   }
 }
 
@@ -1011,7 +1066,7 @@ Pricing
   box-shadow: 0 11px 22px rgba(34, 34, 34, 0.2);
 }
 
-.card{
+.card {
   background-color: rgb(17, 19, 20) !important;
 }
 
@@ -1024,7 +1079,7 @@ Pricing
 
 .package ul li {
   padding: 5px 0px;
-  color:white;
+  color: white;
 }
 
 .package .pname {
