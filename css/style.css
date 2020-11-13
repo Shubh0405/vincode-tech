@@ -299,6 +299,7 @@ header
 
 .main-nav {
   transition: all 0.7s linear;
+  background-color: rgba(70, 66, 66, 0.26);
 }
 
 .main-nav .nav-link {
@@ -1005,7 +1006,7 @@ Pricing
   box-shadow: 0 11px 22px rgba(34, 34, 34, 0.2);
 }
 
-.card{
+.card {
   background-color: rgb(17, 19, 20) !important;
 }
 
@@ -1018,7 +1019,7 @@ Pricing
 
 .package ul li {
   padding: 5px 0px;
-  color:white;
+  color: white;
 }
 
 .package .pname {
