@@ -383,6 +383,12 @@ header
   color: #888;
 }
 
+
+.about-header {
+    width: 50%;
+    height: 500px;
+}
+
 @media (max-width: 480px) {
   .main-nav .nav-link {
     padding: 10px 18px !important;
