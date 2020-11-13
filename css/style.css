@@ -438,7 +438,7 @@ header
 banner
 -------------------------------*/
 .section-banner {
-  min-height: 700px;
+  min-height: 93vh;
   position: relative;
   background-repeat: no-repeat;
   background-position: 65% 50%;
@@ -451,19 +451,70 @@ banner
   letter-spacing: -0.04em;
 }
 
-.section-banner .banner-content h2 {
-  font-size: 30px;
-}
-
-@media (max-width: 991px) {
+@media (max-width: 1220px) {
   .section-banner .banner-content h1 {
     font-size: 80px;
   }
+
+  .section-banner img {
+    height: 250px;
+    width: 40%;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
+  .section-banner {
+    min-height: 100vh;
+  }
+
+  .section-banner .banner-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .section-banner .banner-content h1 {
     font-size: 60px;
+    line-height: 1.1;
+  }
+
+  .section-banner img {
+    height: 250px;
+    width: 60%;
+    transform: translateY(-50px);
+  }
+
+  .landing {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 770px) {
+  /* .section-banner{
+    min-height: 140vh;
+  } */
+  .section-banner img {
+    height: 200px;
+    width: 75%;
+    transform: translateY(-50px);
+  }
+
+  .section-banner .banner-content h1 {
+    font-size: 50px;
+    line-height: 1;
+  }
+
+  .counter-inner {
+    transform: translateY(50px);
+  }
+}
+
+@media (max-width: 770px) {
+  .section-banner img {
+    width: 90%;
   }
 }
 
