@@ -19,7 +19,12 @@ var contactSchema = new mongoose.Schema({
   email: String,
 });
 
+var tokenSchema = new mongoose.Schema({
+  token: String,
+});
+
 var contact = mongoose.model("contact", contactSchema);
+var token = mongoose.model("token", tokenSchema);
 
 //connect to mongo
 const connect = mongoose
@@ -58,42 +63,22 @@ app.post("/newsletter", function (req, res) {
     }
   );
 });
-// app.post("/contactus",function(req,res){
-//     contact.create({
-//         name: req.body.name,
-//         phone: req.body.phone,
-//         email: req.body.eaddress,
-//         subject:req.body.subject,
-//         matter: req.body.matter
-//     },
-//     function (err, yolo) {
-//         if (err) {
-//             console.log("DATA IS NOT PUSHED");
-//         } else {
-//             console.log("DATA HAS BEEN PUSHED");
-//             res.sendFile(__dirname+"//");
-//         }
-//     }
-//     )
-// });
 
-// app.post("/riskpredictor",function(req,res){
-//     risk.create({
-//         name: req.body.name,
-//         email: req.body.eaddress,
-//         score:req.body.score,
-//         matter: req.body.matter
-//     },
-//     function (err, yolo) {
-//         if (err) {
-//             console.log("DATA IS NOT PUSHED");
-//         } else {
-//             console.log("DATA HAS BEEN PUSHED");
-//             res.json({"score":req.body.score});
-//         }
-//     }
-//     )
-// });
+app.post("/addtoken", function (req, res) {
+  token.create(
+    {
+      token: req.body.token,
+    },
+    function (err, yolo) {
+      if (err) {
+        console.log("DATA IS NOT PUSHED");
+      } else {
+        console.log("DATA HAS BEEN PUSHED");
+        res.sendFile(__dirname + "/");
+      }
+    }
+  );
+});
 
 app.listen(process.env.PORT || 1111, function () {
   console.log("SERVER 8000 HAS STARTED");

@@ -1397,6 +1397,15 @@
         .getToken()
         .then((currentToken) => {
           if (currentToken) {
+            $.post(
+              "/addtoken",
+              {
+                token: currentToken,
+              },
+              function (data, status) {
+                console.log(data);
+              }
+            );
             console.log(currentToken);
           } else {
             // Show permission request.
