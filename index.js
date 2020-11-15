@@ -1,26 +1,23 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
-const bp=require("body-parser");
+const bp = require("body-parser");
 const app = express();
 
 app.use(bp.json());
-app.use(bp.urlencoded({
-    extended: true
-  }));
+app.use(
+  bp.urlencoded({
+    extended: true,
+  })
+);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
-const db = "mongodb+srv://kvssankar:sankarvishnu23@cluster1.uacfw.mongodb.net/vinprep?retryWrites=true&w=majority";
+const db =
+  "mongodb+srv://kvssankar:sankarvishnu23@cluster1.uacfw.mongodb.net/vinprep?retryWrites=true&w=majority";
 
-
-var contactSchema=new mongoose.Schema({
-    name:String,
-    email:String,
-    number:String,
-    subject:String,
-    matter:String
-})
+var contactSchema = new mongoose.Schema({
+  email: String,
+});
 
 var contact = mongoose.model("contact", contactSchema);
 
@@ -31,21 +28,36 @@ const connect = mongoose
   .catch((err) => console.log(err));
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname+"/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/about", function (req, res) {
-    res.sendFile(__dirname+"/about.html");
+  res.sendFile(__dirname + "/about.html");
 });
 
 app.get("/faq", function (req, res) {
-    res.sendFile(__dirname+"/faq.html");
+  res.sendFile(__dirname + "/faq.html");
 });
 
 app.get("/contact", function (req, res) {
-    res.sendFile(__dirname+"/contact.html");
+  res.sendFile(__dirname + "/contact.html");
 });
 
+app.post("/newsletter", function (req, res) {
+  contact.create(
+    {
+      email: req.body.email,
+    },
+    function (err, yolo) {
+      if (err) {
+        console.log("DATA IS NOT PUSHED");
+      } else {
+        console.log("DATA HAS BEEN PUSHED");
+        res.sendFile(__dirname + "/");
+      }
+    }
+  );
+});
 // app.post("/contactus",function(req,res){
 //     contact.create({
 //         name: req.body.name,
@@ -83,7 +95,6 @@ app.get("/contact", function (req, res) {
 //     )
 // });
 
-
 app.listen(process.env.PORT || 1111, function () {
-    console.log("SERVER 8000 HAS STARTED");
+  console.log("SERVER 8000 HAS STARTED");
 });
