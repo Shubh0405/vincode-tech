@@ -439,7 +439,7 @@ header
 banner
 -------------------------------*/
 .section-banner {
-  min-height: 93vh;
+  min-height: 100vh;
   position: relative;
   background-repeat: no-repeat;
   background-position: 65% 50%;
@@ -461,12 +461,62 @@ banner
     font-size: 80px;
   }
 
-  .section-banner img {
+  /* .section-banner img {
     height: 250px;
     width: 40%;
-  }
+  } */
+    #vinprep{
+        width: 45%;
+        height: 70%;
+    }
 }
+@media (max-width: 1024px) {
+    .section-banner{
+        padding-bottom: 150px;
+    }
+  .section-banner .banner-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+      font-size: 80px;
+  }
 
+  .section-banner .banner-content h1 {
+    font-size: 80px;
+    line-height: 1.1;
+  }
+  .section-banner .banner-content a {
+    font-size: 23px;
+    line-height: 1;
+  }
+    .section-banner .banner-content span {
+    font-size: 20px;
+  }
+
+  /* .section-banner img {
+    height: 33%;
+    width: 40%;
+  } */
+    #vinprep{
+        width: 45%;
+        height: 50%;
+    }
+    
+  .landing {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .counter-inner {
+    transform: translateY(40px);
+  }
+
+  .text-muted{
+    font-size: 40px;
+  }
+    }
 @media (max-width: 1000px) {
   .section-banner {
     min-height: 100vh;
@@ -482,12 +532,26 @@ banner
     font-size: 60px;
     line-height: 1.1;
   }
+     .section-banner .banner-content a {
+    font-size: 12px;
+  }
+     .section-banner .banner-content span {
+    
+         font-size: 1.5rem
+  }
 
+/*
   .section-banner img {
     height: 250px;
     width: 50%;
     transform: translateY(-50px);
   }
+*/
+        #vinprep{
+    height: 40%;
+    width: 35%;
+    transform: translateY(-50px);
+    }
 
   .landing {
     display: flex;
@@ -506,14 +570,22 @@ banner
 }
 
 @media (max-width: 770px) {
-  /* .section-banner{
-    min-height: 140vh;
-  } */
+   .section-banner{
+    padding-bottom: 140px;
+  } 
+/*
   .section-banner img {
-    height: 200px;
+    height: 100vh;
     width: 75%;
     transform: translateY(-10px);
   }
+*/
+    #vinprep{
+    height:50%;
+    width: 45%;
+    transform: translateY(-10px);
+  
+    }
 
   .section-banner .banner-content h1 {
     font-size: 50px;
@@ -528,9 +600,17 @@ banner
 }
 
 @media (max-width: 500px){
+/*
   .section-banner img{
     width: 90%;
     margin-top: 25px;
+      height: 100vh;
+  }
+*/
+   #vinprep{
+    width: 50%;
+    margin-top: 1.5rem;
+       height: 40%;
   }
   .section-banner .banner-content h1{
     font-size: 40px;
@@ -570,18 +650,24 @@ banner
 @media (max-width: 480px) {
   .section-banner {
     min-height: 500px;
+      height: 100vh;
+  }
+  #vinprep{
+    height: 28%;
+    width: 38%;
   }
 }
 
 @media (max-width: 400px) {
   .section-banner {
-    height:80%;
+    height:100vh;
+      
   }
 }
 
 @media (max-width: 767px) {
   .section-banner {
-    min-height: 515px;
+    min-height: 100vh;
   }
 }
 
@@ -1178,13 +1264,16 @@ Sponsors
 
 .client-item {
   float: left;
-  width: 15%;
-  height: 115px;
+  width: 30%;
+  height: 250px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 20px;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: all 0.45s ease-in-out;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }
 
 .client-item a {
