@@ -23,8 +23,16 @@ var tokenSchema = new mongoose.Schema({
   token: String,
 });
 
+var messageSchema = new mongoose.Schema({
+  name: String,
+  subject: String,
+  phone: String,
+  email: String,
+});
+
 var contact = mongoose.model("contact", contactSchema);
 var token = mongoose.model("token", tokenSchema);
+var token = mongoose.model("message", messageSchema);
 
 //connect to mongo
 const connect = mongoose
@@ -51,6 +59,25 @@ app.get("/contact", function (req, res) {
 app.post("/newsletter", function (req, res) {
   contact.create(
     {
+      email: req.body.email,
+    },
+    function (err, yolo) {
+      if (err) {
+        console.log("DATA IS NOT PUSHED");
+      } else {
+        console.log("DATA HAS BEEN PUSHED");
+        res.sendFile(__dirname + "/");
+      }
+    }
+  );
+});
+
+app.post("/message", function (req, res) {
+  contact.create(
+    {
+      name: req.body.name,
+      subject: req.body.subject,
+      phone: req.body.phone,
       email: req.body.email,
     },
     function (err, yolo) {
