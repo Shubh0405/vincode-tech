@@ -527,10 +527,18 @@ banner
   } */
 }
 
-@media (max-width: 500px){
+@media (max-width: 600px){
+  .section-banner{
+    padding:20px;
+    height:100vh
+  }
   .section-banner img{
     width: 90%;
     margin-top: 25px;
+    height:190px
+  }
+  .section-banner .container{
+    margin-top:-30%;
   }
   .section-banner .banner-content h1{
     font-size: 40px;
