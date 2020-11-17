@@ -143,11 +143,11 @@
               <div class="counter-stat">
                 <h2 class="font-weight-light">
                   <span class="font-weight-bold">Count the day</span>
-                  <br />until conference start
+                  <br />until event to start
                 </h2>
               </div>
             </div>
-            <div id="simple-timer" class="syotimer"></div>
+            <h1 style="color: #ffffff" class="syotimer" id="countdown"></h1>
           </div>
         </div>
       </div>
@@ -1149,6 +1149,37 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwIQh7LGryQdDDi-A603lR8NqiF3R_ycA"></script>
 
     <script src="js/script.js"></script>
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Nov 26, 2020 09:00:00").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("countdown").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
     <script>
       // DOM selectors
       const stars = document.getElementById("stars");
