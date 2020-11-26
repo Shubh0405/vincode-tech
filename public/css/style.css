@@ -386,7 +386,19 @@ header
 
 .about-header {
   width: 50%;
-  height: 500px;
+  height: 30rem;
+}
+
+@media (max-width: 720px) {
+  .about-header {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-header {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -719,6 +731,18 @@ About
 .text-lg {
   font-size: 52px;
   line-height: 1.1;
+}
+
+@media (max-width: 767px) {
+  .text-lg {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-lg {
+    font-size: 35px;
+  }
 }
 
 .ml-90 {
