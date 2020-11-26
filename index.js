@@ -29,6 +29,7 @@ var messageSchema = new mongoose.Schema({
   subject: String,
   phone: String,
   email: String,
+  message:String,
 });
 
 var registrationSchema = new mongoose.Schema({
@@ -42,7 +43,7 @@ var registrationSchema = new mongoose.Schema({
 
 var contact = mongoose.model("contact", contactSchema);
 var token = mongoose.model("token", tokenSchema);
-var token = mongoose.model("message", messageSchema);
+var message = mongoose.model("message", messageSchema);
 var Registration = mongoose.model("registration", registrationSchema);
 
 //connect to mongo
@@ -108,7 +109,7 @@ app.post("/newsletter", function (req, res) {
       if (err) {
         console.log("DATA IS NOT PUSHED");
       } else {
-        console.log("DATA HAS BEEN PUSHED");
+        console.log("DATA HAS BEEN PUSHED", yolo);
         res.sendFile(__dirname + "/");
       }
     }
@@ -116,18 +117,19 @@ app.post("/newsletter", function (req, res) {
 });
 
 app.post("/message", function (req, res) {
-  contact.create(
+  message.create(
     {
       name: req.body.name,
       subject: req.body.subject,
       phone: req.body.phone,
       email: req.body.email,
+      message:req.body.message
     },
     function (err, yolo) {
       if (err) {
         console.log("DATA IS NOT PUSHED");
       } else {
-        console.log("DATA HAS BEEN PUSHED");
+        console.log("DATA HAS BEEN PUSHED", yolo);
         res.sendFile(__dirname + "/");
       }
     }
