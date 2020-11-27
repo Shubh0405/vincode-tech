@@ -232,7 +232,7 @@ app.post("/mail", async (req, res) => {
   // Preview only available when sending through an Ethereal account
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  res.sendFile(__dirname + "/admin.html");
+  res.redirect("/admin");
 });
 
 app.listen(process.env.PORT || 1111, function () {
