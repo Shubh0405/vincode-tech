@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <style>
       .add-button {
+        display:"none";
         position: absolute;
         bottom: 1px;
         width: 100%;
@@ -1343,7 +1344,7 @@
         addBtn.style.display = 'block';
         setTimeout(()=>{
         addBtn.style.display="none";
-      },5000)
+      },2500)
         addBtn.addEventListener('click', (e) => {
           // hide our user interface that shows our A2HS button
           addBtn.style.display = 'none';
