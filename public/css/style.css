@@ -1002,7 +1002,7 @@ Team
   left: 0px;
   top: 0px;
   width: 100%;
-  height: 70%;
+  height: 40%;
   background: rgba(59, 29, 130, 0.5);
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
@@ -1021,6 +1021,8 @@ Team
 
 .speaker-block img {
   border-radius: 5px;
+  height: 100%;
+  width: 100%;
 }
 
 .speaker-block .speaker-social {
