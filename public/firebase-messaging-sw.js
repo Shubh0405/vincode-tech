@@ -1,5 +1,5 @@
 const CACHE_NAME = "version-1";
-const urlsToCache = ["index.html", "offline.html"];
+const urlsToCache = ["/"];
 
 const self = this;
 
@@ -44,15 +44,15 @@ importScripts(
 );
 
 firebase.initializeApp({
-  messagingSenderId: "529535776394",
-  apiKey: "AIzaSyBCWNBrD6PLV-BtvYR6wEeBTg2V7XwhYC0",
-  authDomain: "ventor-7f759.firebaseapp.com",
-  databaseURL: "https://ventor-7f759.firebaseio.com",
-  projectId: "ventor-7f759",
-  storageBucket: "ventor-7f759.appspot.com",
-  messagingSenderId: "529535776394",
-  appId: "1:529535776394:web:84b74c7212676996309f73",
-  measurementId: "G-YWPCQ1Q2FZ",
+  messagingSenderId: "537604729078",
+  apiKey: "AIzaSyDPUkE6q1Clj_VwH5DW2hcV8EEV8Kg4Cm0",
+  authDomain: "vinprep-ff290.firebaseapp.com",
+  databaseURL: "https://vinprep-ff290.firebaseio.com",
+  projectId: "vinprep-ff290",
+  storageBucket: "vinprep-ff290.appspot.com",
+  messagingSenderId: "537604729078",
+  appId: "1:537604729078:web:1cf12cec26ef658e3724d7",
+  measurementId: "G-B60F8NVBQ1",
 });
 
 const messaging = firebase.messaging();
