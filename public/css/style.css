@@ -597,14 +597,18 @@ banner
   } */
 }
 
+.sec-img {
+  height: 300px;
+}
+
 @media (max-width: 600px) {
   .section-banner {
     padding: 20px;
     height: 100vh;
   }
-  .section-banner img {
+  .sec-img {
     width: 90%;
-    height: 150px !important;
+    height: 170px !important;
   }
   .section-banner .container {
     margin-top: -30%;
