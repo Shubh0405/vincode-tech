@@ -383,21 +383,15 @@ header
   font-size: 89px;
   color: #888;
 }
-
-.about-header {
-  width: 50%;
-  height: 30rem;
+.about-logo {
+  justify-content: start;
 }
 
 @media (max-width: 720px) {
-  .about-header {
-    width: 80%;
-  }
-}
-
-@media (max-width: 500px) {
-  .about-header {
-    width: 100%;
+  .about-logo {
+    justify-content: center;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
   }
 }
 
@@ -745,7 +739,7 @@ About
 
 @media (max-width: 480px) {
   .text-lg {
-    font-size: 35px;
+    font-size: 28px;
   }
 }
 
