@@ -202,7 +202,7 @@ app.post("/notify", async (req, res) => {
 });
 
 app.post("/mail", async (req, res) => {
-  const { output, pass } = req.body;
+  const { output, pass, subject } = req.body;
   let emails = await Registration.find({});
   let email = [];
   if (pass === "sankar123")
@@ -212,17 +212,17 @@ app.post("/mail", async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail", // true for 465, false for other ports
     auth: {
-      user: "miniorganisation@gmail.com", // generated ethereal user
+      user: "vinprep.vinnovateit@gmail.com", // generated ethereal user
       pass: "sankarvishnu23", // generated ethereal password
     },
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: `<vinnovateit@gmail.com>`, // sender address
+    from: `<vinprep.vinnovateit@gmail.com>`, // sender address
     to: email, // list of receivers
-    subject: "Updates on Vinprep from VinnovateIT", // Subject line
-    text: "Vinprep", // plain text body
+    subject: subject, // Subject line
+    text: "Vinprep by VinnovateIT", // plain text body
     html: output, // html body
   });
 
