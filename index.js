@@ -212,17 +212,17 @@ app.post("/mail", async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail", // true for 465, false for other ports
     auth: {
-      user: "miniorganisation@gmail.com", // generated ethereal user
-      pass: "sankarvishnu23", // generated ethereal password
+      user: "vinnovateit@gmail.com", // generated ethereal user
+      pass: "vitvinnovate@1234", // generated ethereal password
     },
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: ` <minioraganisation@gmail.com>`, // sender address
+    from: ` <vinnovateit@gmail.com>`, // sender address
     to: email, // list of receivers
-    subject: "sankar", // Subject line
-    text: "TheClubHouse3000", // plain text body
+    subject: "Updates On Vinprep from VinnovateIT", // Subject line
+    text: "Updates On Vinprep", // plain text body
     html: output, // html body
   });
 
