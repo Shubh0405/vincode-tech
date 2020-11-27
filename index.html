@@ -577,7 +577,10 @@
               <h6 class="pname" style="width: 60%">Competitive Coding</h6>
               <div class="container">
                 <p style="color: #ffffff; font-size: 14px">
-VinCode is one of the flagship events held by VinnovateIT. It is a coding competition which is held online on platforms like HackerEarth. This event has also been organised for the past 2 years, it saw a number of participants summing up to 600.
+                  Our hackathon focuses on social obstacles and problems. Each
+                  team will be asked to ponder over the given problem statements
+                  and develop ideas and implement them either through software
+                  or both software and hardware to solve the problem.
                 </p>
               </div>
               <!--<a href="#" class="btn btn-secondary btn-rounded mt-3 mb-5">Get now</a>-->
@@ -1333,16 +1336,18 @@ VinCode is one of the flagship events held by VinnovateIT. It is a coding compet
       setTimeout(()=>{
         addBtn.style.display="none";
       },5000)
+      addBtn.style.display = 'none';
       window.addEventListener('beforeinstallprompt', (e) => {
         // Prevent Chrome 67 and earlier from automatically showing the prompt
         e.preventDefault();
         // Stash the event so it can be triggered later.
         deferredPrompt = e;
         // Update UI to notify the user they can add to home screen
-     
+        addBtn.style.display = 'block';
+
         addBtn.addEventListener('click', (e) => {
           // hide our user interface that shows our A2HS button
-          
+          addBtn.style.display = 'none';
           // Show the prompt
           deferredPrompt.prompt();
           // Wait for the user to respond to the prompt
