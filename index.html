@@ -39,6 +39,15 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .add-button {
+        display:"none";
+        position: absolute;
+        bottom: 1px;
+        width: 100%;
+        z-index:11111111;
+      }
+    </style>
   </head>
 
   <body id="body">
@@ -49,7 +58,7 @@
     <!-- preloader end -->
 
     <!-- Navigation Start -->
-
+    <button class="add-button btn btn-secondary">Add to home screen</button>
     <header class="header-bar">
       <nav class="navbar navbar-expand-lg main-nav">
         <div class="container">
@@ -129,11 +138,11 @@
                 The trouble is, you think you have time.
               </h2>
               <br />
-              <a href="#aboutprep" class="btn btn-hero btn-rounded"
-                >Discover more</a
+              <a href="/register" class="btn btn-hero btn-rounded"
+                >Register Now</a
               >
             </div>
-            <img src="./images/banner/vinpreplogo6.png" height="300px" alt="" />
+            <img class="sec-img" src="./images/banner/vinpreplogo6.png" alt="" />
           </div>
         </div>
       </div>
@@ -198,10 +207,6 @@
                   round,so that he/she can work on those skills, overcome those
                   shortcomings and race for perfection.
                 </p>
-
-                <a href="#" class="btn btn-hero btn-rounded mt-3"
-                  >Participate
-                </a>
               </div>
             </div>
           </div>
@@ -586,7 +591,7 @@
       </div>
     </section>
 
-    <!-- <section class="section-speaker section">
+    <section class="section-speaker section">
       <div class="container">
         <div class="row section-heading">
           <div class="col-lg-6">
@@ -604,81 +609,81 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-6">
             <div class="speaker-block mb-5">
               <div class="img-block">
-                <img src="images/teams/s-1.jpg" alt="" class="img-fluid" />
+                <img src="images/teams/judge-1.jpeg" alt="" class="img-fluid" />
                 <ul class="list-inline speaker-social">
                   <li class="list-inline-item">
                     <a href="#"><i class="tf-ion-social-facebook"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-pinterest"></i></a>
+                    <a href="#"><i class="tf-ion-social-linkedin"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-twitter"></i></a>
+                    <a href="#"><i class="tf-ion-social-instagram"></i></a>
                   </li>
                 </ul>
               </div>
 
               <div class="speaker-info">
                 <h4 class="mb-0 mt-3">
-                  <a href="speaker-single.html">Marta Kemnitz</a>
+                  <a href="speaker-single.html">Rahul Otwani</a>
                 </h4>
-                <p>UI designer</p>
+                <p>HR Panelist</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-6">
             <div class="speaker-block mb-5">
               <div class="img-block">
-                <img src="images/teams/s-2.jpg" alt="" class="img-fluid" />
+                <img src="images/teams/judge-2.jpeg" alt="" class="img-fluid" />
                 <ul class="list-inline speaker-social">
                   <li class="list-inline-item">
                     <a href="#"><i class="tf-ion-social-facebook"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-pinterest"></i></a>
+                    <a href="#"><i class="tf-ion-social-linkedin"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-twitter"></i></a>
+                    <a href="#"><i class="tf-ion-social-instagram"></i></a>
                   </li>
                 </ul>
               </div>
               <div class="speaker-info">
                 <h4 class="mb-0 mt-3">
-                  <a href="speaker-single.html">Martin Gptil</a>
+                  <a href="speaker-single.html">Sahil Sen</a>
                 </h4>
-                <p>UI designer</p>
+                <p>Tech Panel</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-6">
             <div class="speaker-block mb-5">
               <div class="img-block">
-                <img src="images/teams/s-3.jpg" alt="" class="img-fluid" />
+                <img src="images/teams/judge-3.jpeg" alt="" class="img-fluid" />
                 <ul class="list-inline speaker-social">
                   <li class="list-inline-item">
                     <a href="#"><i class="tf-ion-social-facebook"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-pinterest"></i></a>
+                    <a href="#"><i class="tf-ion-social-linkedin"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-twitter"></i></a>
+                    <a href="#"><i class="tf-ion-social-instagram"></i></a>
                   </li>
                 </ul>
               </div>
               <div class="speaker-info">
                 <h4 class="mb-0 mt-3">
-                  <a href="speaker-single.html">Kemnitz Wagon</a>
+                  <a href="speaker-single.html">Shashank Mishra</a>
                 </h4>
-                <p>UI designer</p>
+                <p>Tech Panel</p>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-sm-6">
+          <!-- <div class="col-lg-4 col-sm-6">
             <div class="speaker-block mb-5 mb-lg-0">
               <div class="img-block">
                 <img src="images/teams/s-4.jpg" alt="" class="img-fluid" />
@@ -701,34 +706,34 @@
                 <p>UI designer</p>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-6">
             <div class="speaker-block mb-5 mb-lg-0">
               <div class="img-block">
-                <img src="images/teams/s-5.jpg" alt="" class="img-fluid" />
+                <img src="images/teams/judge-4.jpeg" alt="" class="img-fluid" />
                 <ul class="list-inline speaker-social">
                   <li class="list-inline-item">
                     <a href="#"><i class="tf-ion-social-facebook"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-pinterest"></i></a>
+                    <a href="#"><i class="tf-ion-social-linkedin"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#"><i class="tf-ion-social-twitter"></i></a>
+                    <a href="#"><i class="tf-ion-social-instagram"></i></a>
                   </li>
                 </ul>
               </div>
               <div class="speaker-info">
                 <h4 class="mb-0 mt-3">
-                  <a href="speaker-single.html">Marta Kemnitz</a>
+                  <a href="speaker-single.html">Arvind Kumar Singh</a>
                 </h4>
-                <p>UI designer</p>
+                <p>Tech Panel</p>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-sm-6">
+          <!-- <div class="col-lg-4 col-sm-6">
             <div class="speaker-block mb-5 mb-lg-0">
               <div class="img-block">
                 <img src="images/teams/s-6.jpg" alt="" class="img-fluid" />
@@ -750,12 +755,12 @@
                 </h4>
                 <p>UI designer</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </section>
-    <!-- Section Start -->
+
     <section class="section sponsors">
       <div class="container">
         <div class="row section-heading">
@@ -1235,8 +1240,8 @@
     <script src="plugins/SyoTimer/jquery.syotimer.min.js"></script>
 
     <!-- Form Validator -->
-    <script src="../../cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-    <script src="../../cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="plugins/easing/waypoint.js"></script>
     <script src="plugins/easing/easing.js"></script>
     <script src="plugins/magnific-popup/dist/jquery.magnific-popup.js"></script>
@@ -1393,30 +1398,68 @@
         window.requestAnimationFrame(updateStars);
       }
     </script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-messaging.js"></script>
+    <script>
+      let deferredPrompt;
+      const addBtn = document.querySelector('.add-button')   
+      addBtn.style.display = 'none';
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Update UI to notify the user they can add to home screen
+        addBtn.style.display = 'block';
+        setTimeout(()=>{
+        addBtn.style.display="none";
+      },2500)
+        addBtn.addEventListener('click', (e) => {
+          // hide our user interface that shows our A2HS button
+          addBtn.style.display = 'none';
+          // Show the prompt
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+              if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+              } else {
+                console.log('User dismissed the A2HS prompt');
+              }
+              deferredPrompt = null;
+            });
+        });
+      });
+    </script>
     <script>
       function showToken(a) {
         console.log(a);
       }
       var firebaseConfig = {
-        messagingSenderId: "529535776394",
-        apiKey: "AIzaSyBCWNBrD6PLV-BtvYR6wEeBTg2V7XwhYC0",
-        authDomain: "ventor-7f759.firebaseapp.com",
-        databaseURL: "https://ventor-7f759.firebaseio.com",
-        projectId: "ventor-7f759",
-        storageBucket: "ventor-7f759.appspot.com",
-        messagingSenderId: "529535776394",
-        appId: "1:529535776394:web:84b74c7212676996309f73",
-        measurementId: "G-YWPCQ1Q2FZ",
+        messagingSenderId: "537604729078",
+        apiKey: "AIzaSyDPUkE6q1Clj_VwH5DW2hcV8EEV8Kg4Cm0",
+        authDomain: "vinprep-ff290.firebaseapp.com",
+        databaseURL: "https://vinprep-ff290.firebaseio.com",
+        projectId: "vinprep-ff290",
+        storageBucket: "vinprep-ff290.appspot.com",
+        messagingSenderId: "537604729078",
+        appId: "1:537604729078:web:1cf12cec26ef658e3724d7",
+        measurementId: "G-B60F8NVBQ1",
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/firebase-messaging-sw.js")
+            .then((reg) => console.log("Success: ", reg.scope))
+            .catch((err) => console.log(err));
+        });
+      }
       const messaging = firebase.messaging();
       messaging.usePublicVapidKey(
-        "BNnhGF07JC5DUIU8YKNjvBHxwCZqhC2TT_-PWuRebKnCgqZ69ET7T7tQ3SW8prIpFZeCu8HoZ85uXFqT_UlfUJ0"
+        "BFObZp6sA7po69M1A-D_Q325XpD5jDoBvZgazE2RsEBxNZ-hqs78QJcIjUwTrhxIVXRiQhKjQ7nb9Sm6GAFqLi4"
       );
       messaging.requestPermission().then(() => {
         console.log("granted");
@@ -1452,24 +1495,14 @@
         });
 
       messaging.onMessage((payload) => {
-        var obj = JSON.parse(payload.data.notification);
+        console.log(payload);
+        var obj = payload.notification;
+        console.log(obj);
         var notification = new Notification(obj.title, {
           icon: obj.icon,
           body: obj.body,
         });
       });
-    </script>
-    <script>
-      // Your web app's Firebase configuration
-
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("js/firebase-messaging-sw.js")
-            .then((reg) => console.log("Success: ", reg.scope))
-            .catch((err) => console.log(err));
-        });
-      }
     </script>
   </body>
 </html>

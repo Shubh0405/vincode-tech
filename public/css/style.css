@@ -609,14 +609,18 @@ banner
   } */
 }
 
+.sec-img {
+  height: 300px;
+}
+
 @media (max-width: 600px) {
   .section-banner {
     padding: 20px;
     height: 100vh;
   }
-  .section-banner img {
+  .sec-img {
     width: 90%;
-    height: 190px !important;
+    height: 170px !important;
   }
   .section-banner .container {
     margin-top: -30%;
@@ -1026,7 +1030,7 @@ Team
   left: 0px;
   top: 0px;
   width: 100%;
-  height: 70%;
+  height: 40%;
   background: rgba(59, 29, 130, 0.5);
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
@@ -1045,6 +1049,8 @@ Team
 
 .speaker-block img {
   border-radius: 5px;
+  height: 100%;
+  width: 100%;
 }
 
 .speaker-block .speaker-social {

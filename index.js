@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bp = require("body-parser");
 const app = express();
-
+const nodemailer = require("nodemailer");
+const axios = require("axios");
 app.use(bp.json());
 app.use(
   bp.urlencoded({
@@ -11,8 +12,8 @@ app.use(
 );
 
 app.use(express.static(__dirname + "/public"));
-const db2 = 
-  "mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/vinpreptest?retryWrites=true&w=majority";
+// const db =
+//   "mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/vinpreptest?retryWrites=true&w=majority";
 const db =
   "mongodb+srv://kvssankar:sankarvishnu23@cluster1.uacfw.mongodb.net/vinprep?retryWrites=true&w=majority";
 
@@ -29,16 +30,16 @@ var messageSchema = new mongoose.Schema({
   subject: String,
   phone: String,
   email: String,
-  message:String,
+  message: String,
 });
 
 var registrationSchema = new mongoose.Schema({
-  fullname : String,
-  phnumber : Number,
-  email : String,
-  regno : String,
-  saw : String,
-  skills : String
+  fullname: String,
+  phnumber: Number,
+  email: String,
+  regno: String,
+  saw: String,
+  skills: String,
 });
 
 var contact = mongoose.model("contact", contactSchema);
@@ -48,7 +49,7 @@ var Registration = mongoose.model("registration", registrationSchema);
 
 //connect to mongo
 const connect = mongoose
-  .connect(db2, { useFindAndModify: false })
+  .connect(db, { useFindAndModify: false })
   .then(() => console.log("Mondo db connected...."))
   .catch((err) => console.log(err));
 
@@ -72,27 +73,29 @@ app.get("/register", function (req, res) {
   res.sendFile(__dirname + "/signup.html");
 });
 
-app.post("/register",function(req,res){
+app.get("/admin", function (req, res) {
+  res.sendFile(__dirname + "/admin.html");
+});
+
+app.post("/register", function (req, res) {
   console.log(req.body);
   Registration.create(
-  {
-    fullname:req.body.fullname,
-    phnumber:req.body.phnumber,
-    email:req.body.email,
-    regno:req.body.regno,
-    saw:req.body.saw,
-    skills:req.body.skills,
-  },function(err,newlyCreated)
-  {
-    if(err)
     {
-      console.log(err);
+      fullname: req.body.fullname,
+      phnumber: req.body.phnumber,
+      email: req.body.email,
+      regno: req.body.regno,
+      saw: req.body.saw,
+      skills: req.body.skills,
+    },
+    function (err, newlyCreated) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(newlyCreated);
+      }
     }
-    else
-    {
-      console.log(newlyCreated)
-    }
-  });
+  );
   res.redirect("/");
 });
 
@@ -123,7 +126,7 @@ app.post("/message", function (req, res) {
       subject: req.body.subject,
       phone: req.body.phone,
       email: req.body.email,
-      message:req.body.message
+      message: req.body.message,
     },
     function (err, yolo) {
       if (err) {
@@ -136,20 +139,100 @@ app.post("/message", function (req, res) {
   );
 });
 
-app.post("/addtoken", function (req, res) {
-  token.create(
-    {
-      token: req.body.token,
-    },
-    function (err, yolo) {
-      if (err) {
-        console.log("DATA IS NOT PUSHED");
-      } else {
-        console.log("DATA HAS BEEN PUSHED");
-        res.sendFile(__dirname + "/");
+app.post("/addtoken", async function (req, res) {
+  const present = await token.find({ token: req.body.token });
+  console.log(present);
+  if (present.length === 0)
+    token.create(
+      {
+        token: req.body.token,
+      },
+      function (err, yolo) {
+        if (err) {
+          console.log("DATA IS NOT PUSHED");
+        } else {
+          console.log("DATA HAS BEEN PUSHED");
+          res.send(yolo);
+        }
       }
-    }
-  );
+    );
+});
+
+app.post("/notify", async (req, res) => {
+  const { body, title, pass } = req.body;
+  const tokens = await token.find({});
+  console.log(tokens);
+  let ids = [];
+  for (var i = 0; i < tokens.length; i++) {
+    ids.push(tokens[i].token);
+  }
+  console.log(ids);
+  const config = {
+    headers: {
+      "Content-type": "application/json",
+      Authorization:
+        "key=AAAAfSu9KPY:APA91bEyg2KcRMO8l3D-k3VxHS1VH0zxfq4sFpRuR3n3hUQ3qbojB-joRRadi4xh7HpCiMgtAmonwOSDhzG8kBFjqN72NDBbt-bk7_YscADvaBlQKlgwkpEsaRFJfMiz3-rk2CgSlPhd",
+    },
+  };
+  const data = {
+    registration_ids: ids,
+    notification: {
+      sound: "default",
+      icon:
+        "https://res.cloudinary.com/sankarkvs/image/upload/v1606459312/logo512_l4n6kc.png",
+      body: body,
+      title: title,
+      content_available: true,
+      priority: "high",
+    },
+    data: {
+      sound: "default",
+      body: body,
+      title: title,
+      content_available: true,
+      priority: "high",
+    },
+  };
+  if (pass == "sankar123")
+    axios
+      .post("https://fcm.googleapis.com/fcm/send", data, config)
+      .then((res) => console.log("done"))
+      .catch((err) => console.log(err));
+  res.sendFile(__dirname + "/admin.html");
+});
+
+app.post("/mail", async (req, res) => {
+  const { output, pass } = req.body;
+  let emails = await Registration.find({});
+  let email = [];
+  if (pass === "sankar123")
+    for (var i = 0; i < emails.length; i++) email.push(emails[i].email);
+  console.log(email);
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    service: "gmail", // true for 465, false for other ports
+    auth: {
+      user: "vinnovateit@gmail.com", // generated ethereal user
+      pass: "vitvinnovate@1234", // generated ethereal password
+    },
+  });
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: ` <vinnovateit@gmail.com>`, // sender address
+    to: email, // list of receivers
+    subject: "Updates On Vinprep from VinnovateIT", // Subject line
+    text: "Updates On Vinprep", // plain text body
+    html: output, // html body
+  });
+
+  console.log("Message sent: %s", info.messageId);
+  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+  // Preview only available when sending through an Ethereal account
+  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  res.sendFile(__dirname + "/admin.html");
 });
 
 app.listen(process.env.PORT || 1111, function () {
