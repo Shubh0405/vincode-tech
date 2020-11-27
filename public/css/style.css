@@ -1014,14 +1014,14 @@ Team
   opacity: 0;
 }
 
-.speaker-block .img-block:hover:before {
+/* .speaker-block .img-block:hover:before {
   opacity: 1;
   height: 100%;
-}
+} */
 
-.speaker-block .img-block:hover .speaker-social {
+/* .speaker-block .img-block:hover .speaker-social {
   opacity: 1;
-}
+} */
 
 .speaker-block img {
   border-radius: 5px;
